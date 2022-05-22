@@ -1,0 +1,48 @@
+/*******************************************************************************
+
+Copyright (c) 2022 Massimo Maria Ghisalberti <massimo.ghisalberti@pragmas.org>  
+Initial developer Massimo Maria Ghisalberti <massimo.ghisalberti@pragmas.org>
+
+This source is released under the terms of the Hacking License.
+The initial developer reserves the right to use the source and any derivative
+CSS or SCSS under other licenses (OSS/FOSS/FLOSS).
+
+*******************************************************************************/
+
+@mixin icon_common {
+  top: 0em;
+  position: relative;
+  font-size: 1em;
+  margin: 0em 0.1em 0em 0.1em;
+  display: inline-block;
+}
+
+.icon-email {
+  &::before {
+    content: "✉";
+    @include icon_common;
+    font-size: 1.6em;
+    top: 0.1em;
+  }
+}
+
+.icon-pen {
+  &::before {
+    content: "🖉";
+    @include icon_common;
+  }
+}
+
+.icon-eye {
+  &::before {
+    content: "👁";
+    @include icon_common;
+  }
+}
+
+.icon-video {
+  &::before {
+    content: "📼";
+    @include icon_common;
+  }
+}

@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/*******************************************************************************
+
+Copyright (c) 2022 Massimo Maria Ghisalberti <massimo.ghisalberti@pragmas.org>  
+Initial developer Massimo Maria Ghisalberti <massimo.ghisalberti@pragmas.org>
+
+This source is released under the terms of the Hacking License.
+The initial developer reserves the right to use the source and any derivative
+CSS or SCSS under other licenses (OSS/FOSS/FLOSS).
+
+*******************************************************************************/
+@use "sass:math";
+
+html,
+body {
+  font-family: $def_font;
+  font-size: $def_font_size;
+  line-height: $def_line_height;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  color: $color_text;
+  background-color: transparent;
+}
+
+* {
+  //font-family: $def_font;
+  //font-family: $def_font_mono_regular;
+  //color: $color_text;
+  //background-color: transparent;
+  //line-height: $def_line_height;
+}
+
+@for $i from 6 through 1 {
+  $s: 7 - $i;
+  $dim: math.div($def_font_size, 3.5) * $s; //$def_h_size + ($def_h_factor * $s);
+  h#{$i} {
+    //width: calc(100% - #{$def_padding * 2});
+    margin-top: $def_margin * $s;
+    margin-bottom: $def_margin * $s;
+    font-size: $dim;
+    clear: both;
+  }
+}
+
+pre {
+  font-size: $def_font_size * 0.85;
+  div.language-type {
+    font-size: $def_font_size * 0.8;
+    text-align: right;
+  }
+
+  code {
+    font-family: Monospaced;
+    font-size: $def_font_size * 0.85;
+    letter-spacing: 0.08rem;
+    background-color: $bg_color_code;
+    color: invert($color_text);
+    display: block;
+    padding: $def_padding;
+  }
+}
+
+ul,
+ol,
+dl {
+  font-size: $def_font_size * 0.95;
+  list-style-position: inside;
+  margin-top: $def_margin * 0.6;
+  margin-bottom: $def_margin * 0.6;
+  padding-left: $def_padding;
+  width: calc(100% - #{$def_margin * 2});
+}
+
+img {
+  margin: 0em;
+}
+
+a,
+.obfu-email {
+  color: $color_link;
+  text-decoration: none;
+  font-style: italic;
+  &:hover {
+    color: darken($color_link, $color_shift);
+    text-decoration: underline;
+  }
+}
+
+p {
+  margin: 0em;
+}
+
+blockquote {
+  margin: $def_margin * 1.2;
+  padding-left: $def_padding * 1.2;
+  font-style: italic;
+  border-left: ($def_font_size * 0.3) solid lighten($color_text, $color_shift);
+}
+
+div.metadatas {
+  display: none;
+}

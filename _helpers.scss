@@ -1,0 +1,114 @@
+@charset "UTF-8";
+/*******************************************************************************
+
+Copyright (c) 2022 Massimo Maria Ghisalberti <massimo.ghisalberti@pragmas.org>  
+Initial developer Massimo Maria Ghisalberti <massimo.ghisalberti@pragmas.org>
+
+This source is released under the terms of the Hacking License.
+The initial developer reserves the right to use the source and any derivative
+CSS or SCSS under other licenses (OSS/FOSS/FLOSS).
+
+*******************************************************************************/
+@use "sass:math";
+@use "sass:string";
+
+@function strip-units($number) {
+  @return math.div($number, ($number * 0 + 1));
+}
+
+@function str-contains($str, $match) {
+  @return str-index($str, $match) != null;
+}
+
+@function font-weight-by-name($name) {
+  @if (str-contains($name, "Black") or str-contains($name, "BlackItalic")) {
+    @return 900;
+  }
+  @if (str-contains($name, "Bold") or str-contains($name, "BoldItalic")) {
+    @return 700;
+  }
+
+  @if (
+    str-contains($name, "Semibold") or str-contains($name, "SemiboldItalic")
+  ) {
+    @return 600;
+  }
+
+  @if (str-contains($name, "Medium") or str-contains($name, "MediumItalic")) {
+    @return 500;
+  }
+
+  @if (str-contains($name, "Light") or str-contains($name, "LightItalic")) {
+    @return 300;
+  }
+
+  @if (
+    str-contains($name, "Extralight") or str-contains($name, "ExtralightItalic")
+  ) {
+    @return 200;
+  }
+
+  @return 400;
+}
+
+/*******************************************************************************
+Initial developer: Kitty Giraudel
+The MIT License (MIT) Copyright (c) 2016 Kitty Giraudel
+*******************************************************************************/
+
+@function to-number($value) {
+  $type: type-of($value);
+  @if ($type == "number") {
+    @return $value;
+  }
+
+  @if ($value == true) {
+    @return 1;
+  }
+  @if ($value == false) {
+    @return 0;
+  }
+
+  @if ($type != "string") {
+    @return _sc-throw($value, "number");
+  }
+
+  $pointer: 1;
+  $result: 0;
+  $first-character: str-slice($value, $pointer, $pointer);
+  $allowed-first-character: join(
+    ("-", "."),
+    map-get($sc-constants, "DECIMAL_SPACE")
+  );
+
+  @if not index($allowed-first-character, $first-character) {
+    @return _sc-throw($value, "number");
+  }
+
+  @if ($first-character == ".") {
+    $value: "0" + $value;
+  }
+
+  $find-integer: _sc-find-integer($value, $pointer);
+  $pointer: nth($find-integer, 1);
+  $result: nth($find-integer, 2);
+
+  @if (str-slice($value, $pointer, $pointer) == ".") {
+    $find-digits: _sc-find-digits($value, $pointer);
+    $pointer: nth($find-digits, 1);
+    $digits: nth($find-digits, 2);
+    $result: ($result + $digits);
+  }
+
+  @if ($first-character == "-") {
+    $result: ($result * -1);
+  }
+
+  @if ($pointer <= str-length($value)) {
+    $result: _sc-unit($result, str-slice($value, $pointer));
+  }
+
+  @return $result;
+}
+
+/******************************************************************************/

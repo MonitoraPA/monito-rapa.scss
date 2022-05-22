@@ -1,0 +1,187 @@
+/*******************************************************************************
+
+Copyright (c) 2022 Massimo Maria Ghisalberti <massimo.ghisalberti@pragmas.org>  
+Initial developer Massimo Maria Ghisalberti <massimo.ghisalberti@pragmas.org>
+
+This source is released under the terms of the Hacking License.
+The initial developer reserves the right to use the source and any derivative
+CSS or SCSS under other licenses (OSS/FOSS/FLOSS).
+
+*******************************************************************************/
+
+@mixin image_rules {
+  vertical-align: middle;
+
+  @each $size
+    in 2p
+    5p
+    10p
+    20p
+    25rp
+    30p
+    35p
+    40p
+    45p
+    50p
+    55p
+    60p
+    65p
+    70p
+    75p
+    80p
+    85p
+    90p
+    95p
+    100p
+  {
+    &[src*="#{$size}-"] {
+      width: 1% * to-number(strip-units($size)) !important;
+    }
+  }
+  @each $size
+    in 2vw
+    5vw
+    10vw
+    20vw
+    25rvw
+    30vw
+    35vw
+    40vw
+    45vw
+    50vw
+    55vw
+    60vw
+    65vw
+    70vw
+    75vw
+    80vw
+    85vw
+    90vw
+    95vw
+    100vw
+  {
+    &[src*="#{$size}-"] {
+      width: 1vw * to-number(strip-units($size)) !important;
+    }
+  }
+  @each $size
+    in 2em
+    3em
+    4em
+    5em
+    10em
+    20em
+    25rem
+    30em
+    35em
+    40em
+    45em
+    50em
+    55em
+    60em
+    65em
+    70em
+    75em
+    80em
+    85em
+    90em
+    95em
+    100em
+  {
+    &[src*="#{$size}-"] {
+      $n: to-number(strip-units($size));
+      $w: 1em * $n;
+      width: $w !important;
+      @media (min-width: 100px) and (max-width: 500px) and (orientation: portrait) {
+        @if $n >= 30 {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+  @each $size
+    in 2rem
+    3rem
+    4rem
+    5rem
+    10rem
+    20rem
+    25rrem
+    30rem
+    35rem
+    40rem
+    45rem
+    50rem
+    55rem
+    60rem
+    65rem
+    70rem
+    75rem
+    80rem
+    85rem
+    90rem
+    95rem
+    100rem
+  {
+    &[src*="#{$size}-"] {
+      $n: to-number(strip-units($size));
+      $w: 1rem * $n;
+      width: $w !important;
+      @media (min-width: 100px) and (max-width: 500px) and (orientation: portrait) {
+        @if $n >= 30 {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+  @each $size in 8px 16px 24px 32px 40px 48px 56px 64px 72px 80px 88px 96px {
+    &[src*="#{$size}-"] {
+      width: 1px * to-number(strip-units($size)) !important;
+    }
+  }
+  &[src*="extended-"] {
+    width: 100vw !important;
+    margin-left: calc(100vw - #{$block_padding} - 100vw);
+    margin-top: $def_margin;
+    margin-bottom: $def_margin;
+  }
+  &[src*="left-"] {
+    float: left;
+    margin: 1rem 1rem 1rem 0rem;
+  }
+  &[src*="right-"] {
+    float: right;
+    margin: 1rem 0rem 1rem 1rem;
+  }
+  &[src*="border-"] {
+    border: 1px solid $bg_color_top_navbar;
+  }
+  &[src*="round-"] {
+    margin: 1rem 1rem 1rem 0rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 99em;
+    //border: 1px solid  $bg_color_top_navbar;
+  }
+  &[src*="avatar-"] {
+    margin: 0.5rem 0rem 0.5rem 0rem;
+    //border: 1px solid $bg_color_top_navbar;
+    padding: 0.2rem;
+  }
+  &[src*="block-"] {
+    display: block;
+  }
+  &[src*="inline-"] {
+    display: inline-block;
+  }
+}
+
+header,
+main,
+footer,
+section {
+  img {
+    @include image_rules;
+  }
+}

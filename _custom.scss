@@ -1,0 +1,145 @@
+@charset "UTF-8";
+/*******************************************************************************
+
+Copyright (c) 2022 Massimo Maria Ghisalberti <massimo.ghisalberti@pragmas.org>  
+Initial developer Massimo Maria Ghisalberti <massimo.ghisalberti@pragmas.org>
+
+This source is released under the terms of the Hacking License.
+The initial developer reserves the right to use the source and any derivative
+CSS or SCSS under other licenses (OSS/FOSS/FLOSS).
+
+*******************************************************************************/
+header.logo {
+  display: flex;
+  margin-top: 4em;
+  img.logo {
+    flex-shrink: 1;
+    width: 12em;
+    position: relative;
+    top: 0em;
+    left: 0em;
+  }
+  .motto {
+    margin-top: 1.3em;
+    //width: 76%;
+    width: calc(100% - 12em);
+    padding: 0em 0rem 0em 1em;
+    * {
+      text-transform: uppercase;
+      text-align: center;
+      position: relative;
+    }
+    .motto-0 {
+      font-family: $def_font_sans;
+      margin-bottom: 2em;
+      font-size: 2em;
+      transform: scale(3, 2);
+      span:first-child {
+        font-family: $def_font_sans;
+        display: inline-block;
+        color: $red_700;
+      }
+      span:last-child {
+        //letter-spacing: 0.4em;
+        font-family: $def_font_sans_black;
+        display: inline-block;
+        color: $red_900;
+      }
+    }
+
+    .motto-1 {
+      font-family: $def_font_sans;
+      margin-top: 1.4em;
+      font-size: 1.4em;
+      letter-spacing: 0.2em;
+      span:first-child {
+        font-family: $def_font_sans_light;
+        display: block;
+      }
+      span:last-child {
+        //letter-spacing: 0.4em;
+        font-family: $def_font_sans_black;
+        display: block;
+      }
+    }
+  }
+
+  @media (min-width: 100px) and (max-width: 280px) {
+    .motto {
+      .motto-0 {
+        transform: scale(1.1, 1.4);
+        margin-bottom: 1em;
+        span:last-child {
+          margin-top: 0.4em;
+        }
+      }
+      .motto-1 {
+        font-size: 1em;
+        margin-top: 0.4em;
+      }
+    }
+    img.logo {
+      display: none;
+    }
+  }
+
+  @media (min-width: 281px) and (max-width: 500px) {
+    .motto {
+      .motto-0 {
+        transform: scale(1.1, 1.4);
+        margin-bottom: 1em;
+        span:last-child {
+          margin-top: 0.4em;
+        }
+      }
+      .motto-1 {
+        font-size: 1em;
+        margin-top: 0.4em;
+      }
+    }
+  }
+
+  @media (min-width: 501px) and (max-width: 767px) {
+    .motto {
+      .motto-0 {
+        transform: scale(1.6, 1.4);
+        margin-bottom: 1em;
+      }
+      .motto-1 {
+        font-size: 1em;
+      }
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 900px) {
+    .motto {
+      .motto-0 {
+        transform: scale(2.5, 1.4);
+        margin-bottom: 1em;
+      }
+      .motto-1 {
+        font-size: 1em;
+      }
+    }
+  }
+
+  @media (min-width: 901px) and (max-width: 920px) {
+    .motto {
+      .motto-0 {
+        transform: scale(2.5, 1.4);
+        margin-top: -0.3em;
+        margin-bottom: 1em;
+      }
+      .motto-1 {
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+.button-primary {
+  padding: 0.5em;
+  background-color: $blue_500;
+  color: $grey_100;
+  display: inline-block;
+}

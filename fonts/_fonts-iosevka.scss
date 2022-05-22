@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/*******************************************************************************
+
+Copyright (c) 2022 Massimo Maria Ghisalberti <massimo.ghisalberti@pragmas.org>  
+Initial developer Massimo Maria Ghisalberti <massimo.ghisalberti@pragmas.org>
+
+This source is released under the terms of the Hacking License.
+The initial developer reserves the right to use the source and any derivative
+CSS or SCSS under other licenses (OSS/FOSS/FLOSS).
+
+*******************************************************************************/
+
+@use "sass:map";
+
+$fonts: (
+  "MonospacedBold": "iosevka-extendedbold.ttf",
+  "MonospacedBoldItalic": "iosevka-extendedbolditalic.ttf",
+  "MonospacedBlack": "iosevka-extendedheavy.ttf",
+  "MonospacedBlackItalic": "iosevka-extendedheavyitalic.ttf",
+  "MonospacedItalic": "iosevka-extendeditalic.ttf",
+  "MonospacedLight": "iosevka-extendedlight.ttf",
+  "MonospacedLightItalic": "iosevka-extendedlightitalic.ttf",
+  "Monospaced": "iosevka-extended.ttf",
+  "MonospacedSemibold": "iosevka-extendedsemibold.ttf",
+  "MonospacedSemiboldItalic": "iosevka-extendedsemibolditalic.ttf",
+  "MonospacedExtralight": "iosevka-extendedthin.ttf",
+  "MonospacedExtralightItalic": "iosevka-extendedthinitalic.ttf",
+
+  "DefaultSansBold": "iosevka-aile-bold.ttf",
+  "DefaultSansBoldItalic": "iosevka-aile-bolditalic.ttf",
+  "DefaultSansBlack": "iosevka-aile-heavy.ttf",
+  "DefaultSansBlackItalic": "iosevka-aile-heavyitalic.ttf",
+  "DefaultSansItalic": "iosevka-aile-italic.ttf",
+  "DefaultSansLight": "iosevka-aile-light.ttf",
+  "DefaultSansLightItalic": "iosevka-aile-lightitalic.ttf",
+  "DefaultSans": "iosevka-aile-regular.ttf",
+  "DefaultSansSemibold": "iosevka-aile-semibold.ttf",
+  "DefaultSansSemiboldItalic": "iosevka-aile-semibolditalic.ttf",
+  "DefaultSansExtralight": "iosevka-aile-thin.ttf",
+  "DefaultSansExtralightItalic": "iosevka-aile-thinitalic.ttf",
+
+  "DefaultSerifBold": "iosevka-etoile-bold.ttf",
+  "DefaultSerifBoldItalic": "iosevka-etoile-bolditalic.ttf",
+  "DefaultSerifBlack": "iosevka-etoile-heavy.ttf",
+  "DefaultSerifBlackItalic": "iosevka-etoile-heavyitalic.ttf",
+  "DefaultSerifItalic": "iosevka-etoile-italic.ttf",
+  "DefaultSerifLight": "iosevka-etoile-light.ttf",
+  "DefaultSerifLightItalic": "iosevka-etoile-lightitalic.ttf",
+  "DefaultSerif": "iosevka-etoile-regular.ttf",
+  "DefaultSerifSemibold": "iosevka-etoile-semibold.ttf",
+  "DefaultSerifSemiboldItalic": "iosevka-etoile-semibolditalic.ttf",
+  "DefaultSerifExtralight": "iosevka-etoile-thin.ttf",
+  "DefaultSerifExtralightItalic": "iosevka-etoile-thinitalic.ttf",
+  "glyphicons": "glyphicons-halflings-regular.ttf",
+);

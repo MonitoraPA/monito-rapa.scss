@@ -1,0 +1,453 @@
+@charset "UTF-8";
+/*******************************************************************************
+
+Copyright (c) 2022 Massimo Maria Ghisalberti <massimo.ghisalberti@pragmas.org>  
+Initial developer Massimo Maria Ghisalberti <massimo.ghisalberti@pragmas.org>
+
+This source is released under the terms of the Hacking License.
+The initial developer reserves the right to use the source and any derivative
+CSS or SCSS under other licenses (OSS/FOSS/FLOSS).
+
+*******************************************************************************/
+
+@use "sass:math";
+
+@mixin block_common {
+  background-color: $bg_color_main;
+  padding: $def_padding $block_padding $def_padding $block_padding;
+  margin: auto;
+  max-width: $main_width;
+  //min-width: math.div($main_width, 2);
+}
+
+@mixin block_common_reset {
+  padding: 0em;
+  margin: 0em;
+  max-width: unset;
+  min-width: unset;
+}
+
+body {
+  background-color: $bg_color; //$bg_color_top_navbar;
+}
+
+h1 {
+  line-height: $def_line_height * 1.5;
+}
+
+nav {
+  @include block_common;
+
+  &.inline {
+    @include block_common_reset;
+  }
+
+  @mixin item_common {
+    display: inline-block;
+    @if $boldize_nav {
+      font-weight: bold;
+    }
+    font-style: normal;
+    padding-top: $def_padding;
+    padding-bottom: $def_padding;
+    padding-left: $def_padding * 0.5;
+    padding-right: $def_padding * 0.4;
+    color: invert($bg_color_top_navbar);
+  }
+
+  @mixin anchor_common {
+    @include item_common;
+    cursor: pointer;
+    &::after {
+      content: "|";
+      display: inline-block;
+      position: relative;
+      margin: 0em 0em 0em 0.4em;
+      //margin-right: -1em;
+      text-decoration: none !important;
+    }
+    &:last-child::after {
+      content: "";
+      margin-left: 0em;
+    }
+  }
+
+  span:first-child {
+    @include item_common;
+  }
+
+  a {
+    @include anchor_common;
+  }
+
+  &.top-navbar {
+    background-color: $bg_color_top_navbar;
+    font-size: $def_font_size;
+    #topNavbarMenuIcon {
+      cursor: pointer;
+      display: none;
+      position: relative;
+      font-family: glyphicons;
+      color: invert($bg_color_top_navbar);
+      &:before {
+        content: "\e012";
+      }
+    }
+    #topNavbarMenuTrigger {
+      display: none;
+    }
+    ul {
+      margin: 0rem;
+      padding: 0rem;
+      width: 100%;
+      //border: 1px solid red;
+      display: flex;
+      li {
+        display: inline-block;
+        &.locale-link {
+          //border: 1px solid red;
+          a {
+            display: inline-block;
+          }
+        }
+        a {
+          @include anchor_common;
+          display: block;
+          &:hover {
+            background-color: lighten(
+              $bg_color_top_navbar,
+              $color_shift_medium
+            );
+          }
+        }
+      }
+    }
+  }
+}
+
+header {
+  overflow: hidden;
+
+  @include block_common;
+
+  img,
+  canvas {
+    display: block;
+    width: 100%;
+    height: $header_h;
+    padding: 0em;
+    margin: 0rem;
+    //border: 1px solid red;
+  }
+  div.title,
+  span.subtitle {
+    position: absolute;
+    margin-top: -$def_font_size * 6;
+    font-size: $def_font_size * 4;
+    width: 100vw;
+    text-align: center;
+    font-weight: bold;
+    line-height: 0rem;
+    color: invert($bg_color_header);
+  }
+  div.title {
+    span {
+      &.logo-part-1 {
+        color: $logo-color-1;
+        letter-spacing: 0.22em;
+        font-weight: bold;
+        text-shadow: -1px 0px lighten($logo-color-1, 20);
+        text-rendering: optimizeLegibility;
+      }
+      &.logo-part-2 {
+        color: $logo-color-2;
+        letter-spacing: 0.22em;
+        font-weight: bold;
+        text-shadow: -1px 0px lighten($logo-color-2, 20);
+        text-rendering: optimizeLegibility;
+      }
+      &.logo-part-3 {
+        color: $logo-color-3;
+        letter-spacing: 0.22em;
+        font-weight: bold;
+        text-shadow: -1px 0px lighten($logo-color-3, 30);
+        text-rendering: optimizeLegibility;
+      }
+      &.logo-part-4 {
+        color: $logo-color-4;
+        letter-spacing: 0.5em;
+        font-weight: bold;
+        text-shadow: -1px 0px lighten($logo-color-4, 20);
+        text-rendering: optimizeLegibility;
+      }
+    }
+  }
+  span.subtitle {
+    display: block;
+    font-size: $def_font_size * 2;
+    margin-top: calc(#{-$def_font_size} + 4.2rem);
+  }
+}
+
+footer {
+  @include block_common;
+
+  clear: both;
+  color: white !important;
+  background-color: $bg_color_top_navbar;
+  font-size: $def_font_size;
+  display: flex;
+
+  div {
+    width: 25%;
+    &.left {
+      //border: 1px solid red;
+    }
+    &.center {
+      display: flex;
+      //border: 1px solid red;
+      ul {
+        width: 50%;
+        margin: 0rem;
+        &.footer-menu {
+          list-style: none;
+        }
+      }
+    }
+    &.right {
+      //border: 1px solid red;
+    }
+  }
+
+  * {
+    color: invert($bg_color_top_navbar);
+  }
+
+  a:hover {
+    color: invert($bg_color_top_navbar);
+  }
+
+  p.copyright {
+    span {
+      margin: 0em 0.2em;
+    }
+  }
+}
+
+main {
+  @include block_common;
+
+  p {
+    text-align: $def_text_align;
+    margin-bottom: 0.4rem;
+    letter-spacing: $def_letter_spacing;
+    line-height: $def_line_height;
+    & > img:first-child {
+      width: 100% !important;
+      clear: both;
+      @include image_rules;
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    p,
+    pre,
+    blockquote {
+      display: inline;
+    }
+    blockquote {
+      border: none;
+      margin: 0rem;
+      padding-left: 0rem;
+    }
+  }
+
+  blockquote {
+    blockquote {
+      border: none;
+      margin: 0rem;
+      padding-left: 0rem;
+    }
+  }
+}
+
+@media (max-width: 483px) {
+  header {
+    //height: $header_h;
+    img,
+    canvas {
+      //height: $header_h;
+    }
+    .title {
+      font-size: 2.5rem !important;
+      span.subtitle {
+        //display: none;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+  nav,
+  main,
+  header,
+  footer {
+    $padding: $def_padding * $small_padding_factor;
+    padding: $def_padding $padding $def_padding $padding;
+  }
+  header {
+    //height: $header_h;
+    img,
+    canvas {
+      //height: $header_h;
+    }
+    .title {
+      //font-size: 3rem !important;
+      span.subtitle {
+        //display: none;
+        //font-size: 1rem;
+      }
+    }
+  }
+
+  #topNavbarMenuIcon {
+    display: inline-block !important;
+    margin-left: calc(100vw - 4.6rem);
+  }
+
+  #topNavbarMenuTrigger:checked + ul {
+    display: block;
+  }
+
+  nav {
+    &.top-navbar {
+      ul {
+        display: none;
+      }
+      &:hover ul {
+        //display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    display: block;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    div {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  header {
+    //height: $header_h;
+    img,
+    canvas {
+      //height: $header_h;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 959px) {
+}
+@media (min-width: 960px) and (max-width: 1279px) {
+}
+
+.full-with-vplayer {
+  position: relative;
+  padding-bottom: 56.25%;
+  margin: 2em;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+.full-with-vplayer iframe,
+.full-with-vplayer object,
+.full-with-vplayer embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  &.news,
+  &.faq {
+    p {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 0.6em;
+      label:first-child {
+        font-weight: 800;
+        color: $color_label;
+        font-size: 1.1em;
+        margin: 0.4em 0em 0.4em 0em;
+        width: 100%;
+        a {
+          color: $color_label;
+          text-decoration: none;
+          cursor: default;
+          &:hover {
+            text-decoration: none;
+            cursor: default;
+          }
+        }
+      }
+      cite {
+        font-style: normal;
+        font-size: 0.9em;
+        margin-left: 1em;
+        border-left: 0.3em solid lighten($color_text, 40);
+        padding-left: 1em;
+
+        em.quote {
+          display: block;
+          margin: 0.6em 1em 0.6em 1em;
+          &::before {
+            content: "“";
+          }
+          &::after {
+            content: "”";
+          }
+        }
+      }
+    }
+  }
+
+  &.news {
+    a {
+      font-style: normal;
+      margin-left: 1em;
+      flex-grow: 1;
+      font-weight: 800;
+      margin: 0.5em 0em 0.4em 1em;
+    }
+  }
+
+  &.tiles {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    @each $size in 1 2 3 4 5 6 {
+      .tile-#{$size} {
+        * {
+          position: relative;
+          width: 100%;
+        }
+        width: 0.95% * math.div(100, to-number($size));
+        padding: 0.2em;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/*******************************************************************************
+
+Copyright (c) 2022 Massimo Maria Ghisalberti <massimo.ghisalberti@pragmas.org>  
+Initial developer Massimo Maria Ghisalberti <massimo.ghisalberti@pragmas.org>
+
+This source is released under the terms of the Hacking License.
+The initial developer reserves the right to use the source and any derivative
+CSS or SCSS under other licenses (OSS/FOSS/FLOSS).
+
+*******************************************************************************/
+@use "sass:map";
+
+@import "fonts/_fonts-iosevka";
+@import "_helpers";
+
+$font-base: "/fonts"; 
+
+@each $name, $file in $fonts {
+  $weight : font-weight-by-name($name);
+  @font-face {
+    font-family: $name;
+    font-weight: $weight;
+    font-style: normal;
+    font-stretch: normal;
+    src: url("#{$font-base}/#{$file}") format("truetype");
+  }
+}
