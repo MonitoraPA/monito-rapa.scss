@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*******************************************************************************
 
 Copyright (c) 2022 Massimo Maria Ghisalberti <massimo.ghisalberti@pragmas.org>  
@@ -9,40 +10,15 @@ CSS or SCSS under other licenses (OSS/FOSS/FLOSS).
 
 *******************************************************************************/
 
-@mixin icon_common {
-  top: 0em;
-  position: relative;
-  font-size: 1em;
-  margin: 0em 0.1em 0em 0.1em;
-  display: inline-block;
-}
+@import "_colors";
+@import "_constants_dark";
+@import "_fonts";
+@import "_helpers";
+@import "_defaults";
+@import "_icons";
+@import "_images";
+@import "_structure";
+//@import "_languages";
+//@import "_polls";
+@import "_custom";
 
-.icon-email {
-  &::before {
-    content: "✉";
-    @include icon_common;
-    font-size: 1.6em;
-    top: 0.1em;
-  }
-}
-
-.icon-output {
-  &::before {
-    content: "▲";
-    @include icon_common;
-  }
-}
-
-.icon-input {
-  &::before {
-    content: "▼";
-    @include icon_common;
-  }
-}
-
-.icon-video {
-  &::before {
-    content: "📼";
-    @include icon_common;
-  }
-}
