@@ -161,7 +161,7 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
-  color: #fafafa;
+  color: #f5f5f5;
   background-color: transparent;
 }
 
@@ -218,8 +218,8 @@ pre code {
   font-family: Monospaced;
   font-size: 13.6px;
   letter-spacing: 0.08rem;
-  background-color: #424242;
-  color: #050505;
+  background-color: #000000;
+  color: #0a0a0a;
   display: block;
   padding: 0.4rem;
 }
@@ -1181,7 +1181,7 @@ header img[src*=border-],
 main img[src*=border-],
 footer img[src*=border-],
 section img[src*=border-] {
-  border: 1px solid #424242;
+  border: 1px solid #000000;
 }
 header img[src*=round-],
 main img[src*=round-],
@@ -1224,7 +1224,7 @@ CSS or SCSS under other licenses (OSS/FOSS/FLOSS).
 
 *******************************************************************************/
 body {
-  background-color: #424242;
+  background-color: #000000;
 }
 
 h1 {
@@ -1232,7 +1232,7 @@ h1 {
 }
 
 nav {
-  background-color: #424242;
+  background-color: #000000;
   padding: 0.4rem 4rem 0.4rem 4rem;
   margin: auto;
   max-width: 50rem;
@@ -1250,7 +1250,7 @@ nav span:first-child {
   padding-bottom: 0.4rem;
   padding-left: 0.2rem;
   padding-right: 0.16rem;
-  color: #bdbdbd;
+  color: white;
 }
 nav a {
   display: inline-block;
@@ -1259,7 +1259,7 @@ nav a {
   padding-bottom: 0.4rem;
   padding-left: 0.2rem;
   padding-right: 0.16rem;
-  color: #bdbdbd;
+  color: white;
   cursor: pointer;
 }
 nav a::after {
@@ -1274,7 +1274,7 @@ nav a:last-child::after {
   margin-left: 0em;
 }
 nav.top-navbar {
-  background-color: #424242;
+  background-color: #000000;
   font-size: 16px;
 }
 nav.top-navbar #topNavbarMenuIcon {
@@ -1282,7 +1282,7 @@ nav.top-navbar #topNavbarMenuIcon {
   display: none;
   position: relative;
   font-family: glyphicons;
-  color: #bdbdbd;
+  color: white;
 }
 nav.top-navbar #topNavbarMenuIcon:before {
   content: "\e012";
@@ -1309,7 +1309,7 @@ nav.top-navbar ul li a {
   padding-bottom: 0.4rem;
   padding-left: 0.2rem;
   padding-right: 0.16rem;
-  color: #bdbdbd;
+  color: white;
   cursor: pointer;
   display: block;
 }
@@ -1325,12 +1325,12 @@ nav.top-navbar ul li a:last-child::after {
   margin-left: 0em;
 }
 nav.top-navbar ul li a:hover {
-  background-color: #828282;
+  background-color: #404040;
 }
 
 header {
   overflow: hidden;
-  background-color: #424242;
+  background-color: #000000;
   padding: 0.4rem 4rem 0.4rem 4rem;
   margin: auto;
   max-width: 50rem;
@@ -1352,7 +1352,7 @@ header span.subtitle {
   text-align: center;
   font-weight: bold;
   line-height: 0rem;
-  color: #bdbdbd;
+  color: white;
 }
 header div.title span.logo-part-1 {
   color: #2f5f96;
@@ -1389,13 +1389,13 @@ header span.subtitle {
 }
 
 footer {
-  background-color: #424242;
+  background-color: #000000;
   padding: 0.4rem 4rem 0.4rem 4rem;
   margin: auto;
   max-width: 50rem;
   clear: both;
   color: white !important;
-  background-color: #424242;
+  background-color: #000000;
   font-size: 16px;
   display: flex;
 }
@@ -1413,17 +1413,17 @@ footer div.center ul.footer-menu {
   list-style: none;
 }
 footer * {
-  color: #bdbdbd;
+  color: white;
 }
 footer a:hover {
-  color: #bdbdbd;
+  color: white;
 }
 footer p.copyright span {
   margin: 0em 0.2em;
 }
 
 main {
-  background-color: #424242;
+  background-color: #000000;
   padding: 0.4rem 4rem 0.4rem 4rem;
   margin: auto;
   max-width: 50rem;
@@ -1892,7 +1892,7 @@ main p > img:first-child[src*=right-] {
   margin: 1rem 0rem 1rem 1rem;
 }
 main p > img:first-child[src*=border-] {
-  border: 1px solid #424242;
+  border: 1px solid #000000;
 }
 main p > img:first-child[src*=round-] {
   margin: 1rem 1rem 1rem 0rem;
