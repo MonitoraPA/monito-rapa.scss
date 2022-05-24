@@ -2217,4 +2217,23 @@ header.logo .motto .motto-1 span:last-child {
   color: white;
 }
 
+.image-tiles .tile {
+  margin: 0.4em;
+  display: inline-block;
+  padding: 0em;
+  background-color: #fafafa;
+  border: 0.4em solid #fafafa;
+}
+.image-tiles .tile-2 {
+  width: 46% !important;
+}
+.image-tiles img {
+  position: absolute;
+  top: 50%;
+  margin: 0em;
+  padding: 0em;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
 /*# sourceMappingURL=monito-rapa-light.css.map */
