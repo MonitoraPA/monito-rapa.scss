@@ -11,13 +11,18 @@ CSS or SCSS under other licenses (OSS/FOSS/FLOSS).
 *******************************************************************************/
 @use "sass:math";
 @use "sass:string";
+@use "sass:list";
 
 @function strip-units($number) {
   @return math.div($number, ($number * 0 + 1));
 }
 
 @function str-contains($str, $match) {
-  @return str-index($str, $match) != null;
+  @return string.index($str, $match) != null;
+}
+
+@function list-contains($list, $match) {
+  @return list.index($list, $match) != null;
 }
 
 @function font-weight-by-name($name) {

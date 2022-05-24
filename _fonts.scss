@@ -14,15 +14,28 @@ CSS or SCSS under other licenses (OSS/FOSS/FLOSS).
 @import "fonts/_fonts-iosevka";
 @import "_helpers";
 
-$font-base: "/fonts"; 
+$font-base: "fonts";
 
 @each $name, $file in $fonts {
-  $weight : font-weight-by-name($name);
+  $weight: font-weight-by-name($name);
   @font-face {
     font-family: $name;
     font-weight: $weight;
     font-style: normal;
     font-stretch: normal;
-    src: url("../#{$font-base}/#{$file}") format("truetype");
+    $src: "";
+    @if (list-contains($font-formats, "woff")) {
+      $src: url("../#{$font-base}/#{$file}.woff") format("woff");
+    }
+    @if (list-contains($font-formats, "woff2")) {
+      $src: $src, url("../#{$font-base}/#{$file}.woff2") format("woff2");
+    }
+    @if (list-contains($font-formats, "truetype")) {
+      $src: $src, url("../#{$font-base}/#{$file}.ttf") format("truetype");
+    }
+    src: $src;
+    //url("../#{$font-base}/#{$file}.ttf") format("truetype"),
+    //url("../#{$font-base}/#{$file}.woff2") format("woff2"),
+    //url("../#{$font-base}/#{$file}.woff")  format("woff");
   }
 }
