@@ -10,11 +10,11 @@ CSS or SCSS under other licenses (OSS/FOSS/FLOSS).
 
 *******************************************************************************/
 
-$def_font_serif: DefaultSerif, serif;
-$def_font_sans: DefaultSans, sans-serif;
-$def_font_sans_black: DefaultSansBlack, sans-serif;
-$def_font_sans_light: DefaultSansLight, sans-serif;
-$def_font_mono: MonospacedMedium, monospace;
+$def_font_serif: DefaultSerif, Courier, "Courier New", serif;
+$def_font_sans: DefaultSans, "DejaVu Sans Mono", "Lucida Sans", "Lucida Sans Typewriter", sans-serif;
+$def_font_sans_black: DefaultSansBlack, "DejaVu Sans Mono", "Lucida Sans", "Lucida Sans Typewriter", sans-serif;
+$def_font_sans_light: DefaultSansLight, "DejaVu Sans Mono", "Lucida Sans", "Lucida Sans Typewriter", sans-serif;
+$def_font_mono: Monospaced, monospace;
 $def_font_mono_regular: Monospaced, monospace;
 $def_font: $def_font_serif;
 
@@ -33,22 +33,7 @@ $def_line_height: 1.45rem;
 
 $boldize_nav: false;
 
-$color_shift: 50%;
-$color_shift_medium: 25%;
-
-$color_link: $blue_900;
-$color_label: $green_900;
-$color_text: $color_800;
-$bg_color: $grey_50;
-$bg_color_code: $bg_color;
-$bg_color_top_navbar: $bg_color;
-$bg_color_main: $bg_color;
-$bg_color_header: $bg_color;
-
-$logo-color-1: #2f5f96;
-$logo-color-2: #50be95;
-$logo-color-3: #e0c038;
-$logo-color-4: #2f5f96;
+$theme: "dark";
 
 /*******************************************************************************/
 

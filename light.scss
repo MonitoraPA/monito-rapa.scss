@@ -11,14 +11,5 @@ CSS or SCSS under other licenses (OSS/FOSS/FLOSS).
 *******************************************************************************/
 
 @import "_colors";
-@import "_constants";
-@import "_fonts";
-@import "_helpers";
-@import "_defaults";
-@import "_icons";
-@import "_images";
-@import "_structure";
-//@import "_languages";
-//@import "_polls";
-@import "_custom";
-
+@import "themes/_light.scss";
+@import "_main";

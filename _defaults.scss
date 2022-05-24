@@ -10,6 +10,7 @@ CSS or SCSS under other licenses (OSS/FOSS/FLOSS).
 
 *******************************************************************************/
 @use "sass:math";
+@use "sass:color";
 
 html,
 body {
@@ -80,11 +81,19 @@ img {
 a,
 .obfu-email {
   color: $color_link;
-  text-decoration: none;
+  text-decoration: $color_link_decoration;
   font-style: italic;
+
+  &:active {
+    color: $color_link_active; 
+  }
+
   &:hover {
-    color: darken($color_link, $color_shift);
-    text-decoration: underline;
+    color: $color_link_hover; 
+    text-decoration: $color_link_hover_decoration;
+  }
+  &:visited {
+    color: $color_link_visited;
   }
 }
 

@@ -23,6 +23,6 @@ $font-base: "/fonts";
     font-weight: $weight;
     font-style: normal;
     font-stretch: normal;
-    src: url("#{$font-base}/#{$file}") format("truetype");
+    src: url("../#{$font-base}/#{$file}") format("truetype");
   }
 }

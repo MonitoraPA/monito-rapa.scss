@@ -10,33 +10,17 @@ CSS or SCSS under other licenses (OSS/FOSS/FLOSS).
 
 *******************************************************************************/
 
-$def_font_serif: DefaultSerif, serif;
-$def_font_sans: DefaultSans, sans-serif;
-$def_font_sans_black: DefaultSansBlack, sans-serif;
-$def_font_sans_light: DefaultSansLight, sans-serif;
-$def_font_mono: MonospacedMedium, monospace;
-$def_font_mono_regular: Monospaced, monospace;
-$def_font: $def_font_serif;
-
-//$def_font_size: 11.8pt;
-$def_font_size: 16px;
-$def_letter_spacing: 0.025em;
-$def_text_align: left;
-
-$main_padding_factor: 10;
-$small_padding_factor: 2;
-$main_width: 50rem;
-$header_h: 16rem;
-$def_margin: 0.4rem;
-$def_padding: 0.4rem;
-$def_line_height: 1.45rem;
-
-$boldize_nav: false;
-
 $color_shift: 50%;
 $color_shift_medium: 25%;
 
 $color_link: $yellow_700;
+$color_link_active: $yellow_900;
+$color_link_hover: $yellow_900;
+$color_link_visited: $purple_100;
+
+$color_link_decoration: none;
+$color_link_hover_decoration: underline;
+
 $color_label: $green_300;
 $color_text: $grey_50;
 $bg_color: $color_800;
@@ -49,9 +33,3 @@ $logo-color-1: #2f5f96;
 $logo-color-2: #50be95;
 $logo-color-3: #e0c038;
 $logo-color-4: #2f5f96;
-
-/*******************************************************************************/
-
-$block_padding: $def_padding * $main_padding_factor;
-
-/*******************************************************************************/
