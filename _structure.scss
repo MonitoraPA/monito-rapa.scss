@@ -434,19 +434,70 @@ section {
   }
 
   &.tiles {
+    $factor: 1%;
+
     display: flex;
     flex-wrap: wrap;
     position: relative;
     width: 100%;
+
+    .tile {
+      display: inline-block;
+      padding: 0em;
+      margin: $tile_margin;
+      background-color: $bg_color_tile;
+      @if (to-number($tile_border_size) > 0) {
+        border: $tile_border_size solid $tile_border_color;
+      }
+      @if (to-number($tile_border_size) <= 0) {
+        $tile_border_size: 0.1em;
+      }
+    }
+
+    @mixin twidth($n) {
+      $delta: ($tile_margin + $tile_border_size) * 2 + $tile_margin;
+      @if (to-number($delta) <= 0) {
+        $delta: 0.4em;
+      }
+      width: calc(#{math.div(100, $n)}% - #{$delta}) !important;
+    }
+
     @each $size in 1 2 3 4 5 6 {
       .tile-#{$size} {
         * {
           position: relative;
           width: 100%;
         }
-        width: 0.95% * math.div(100, to-number($size));
+        @if ($size == 1) {
+          width: 100% !important;
+        } @else {
+          @include twidth($size);
+        }
         padding: 0.2em;
       }
     }
+
+    @media (min-width: 100px) and (max-width: 941px) {
+      @each $size in 1 2 3 4 5 6 {
+        .tile-#{$size} {
+          @if ($size == 1) {
+            width: 100% !important;
+          } @else {
+            @include twidth($size - 1);
+          }
+        }
+      }
+    }
+  }
+}
+
+.image-tiles {
+  img {
+    position: absolute;
+    top: 50%;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+    transform: translateY(-50%);
   }
 }

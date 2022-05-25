@@ -148,29 +148,3 @@ header.logo {
     color: color.adjust($grey_100, $lightness: $color_shift);
   }
 }
-
-.image-tiles {
-  //background-color: $bg_color_image;
-
-  .tile {
-    margin: 0.4em;
-    display: inline-block;
-    padding: 0em;
-    background-color: $bg_color_image_tile;
-    border: 0.4em solid $border_color_image_tile;
-  }
-
-  .tile-2 {
-    width: 46% !important;
-  }
-
-  img {
-    position: absolute;
-    top: 50%;
-    margin: 0em;
-    padding: 0em;
-    width: 100%;
-    //background-color: $bg_color_image;
-    transform: translateY(-50%);
-  }
-}

@@ -2039,8 +2039,15 @@ section.tiles {
   position: relative;
   width: 100%;
 }
+section.tiles .tile {
+  display: inline-block;
+  padding: 0em;
+  margin: 0.4em;
+  background-color: #81c784;
+  border: 0.4em solid #2e7d32;
+}
 section.tiles .tile-1 {
-  width: 95%;
+  width: 100% !important;
   padding: 0.2em;
 }
 section.tiles .tile-1 * {
@@ -2048,7 +2055,7 @@ section.tiles .tile-1 * {
   width: 100%;
 }
 section.tiles .tile-2 {
-  width: 47.5%;
+  width: calc(50% - 2em) !important;
   padding: 0.2em;
 }
 section.tiles .tile-2 * {
@@ -2056,7 +2063,7 @@ section.tiles .tile-2 * {
   width: 100%;
 }
 section.tiles .tile-3 {
-  width: 31.6666666667%;
+  width: calc(33.3333333333% - 2em) !important;
   padding: 0.2em;
 }
 section.tiles .tile-3 * {
@@ -2064,7 +2071,7 @@ section.tiles .tile-3 * {
   width: 100%;
 }
 section.tiles .tile-4 {
-  width: 23.75%;
+  width: calc(25% - 2em) !important;
   padding: 0.2em;
 }
 section.tiles .tile-4 * {
@@ -2072,7 +2079,7 @@ section.tiles .tile-4 * {
   width: 100%;
 }
 section.tiles .tile-5 {
-  width: 19%;
+  width: calc(20% - 2em) !important;
   padding: 0.2em;
 }
 section.tiles .tile-5 * {
@@ -2080,12 +2087,41 @@ section.tiles .tile-5 * {
   width: 100%;
 }
 section.tiles .tile-6 {
-  width: 15.8333333333%;
+  width: calc(16.6666666667% - 2em) !important;
   padding: 0.2em;
 }
 section.tiles .tile-6 * {
   position: relative;
   width: 100%;
+}
+@media (min-width: 100px) and (max-width: 941px) {
+  section.tiles .tile-1 {
+    width: 100% !important;
+  }
+  section.tiles .tile-2 {
+    width: calc(100% - 2em) !important;
+  }
+  section.tiles .tile-3 {
+    width: calc(50% - 2em) !important;
+  }
+  section.tiles .tile-4 {
+    width: calc(33.3333333333% - 2em) !important;
+  }
+  section.tiles .tile-5 {
+    width: calc(25% - 2em) !important;
+  }
+  section.tiles .tile-6 {
+    width: calc(20% - 2em) !important;
+  }
+}
+
+.image-tiles img {
+  position: absolute;
+  top: 50%;
+  margin: 0em;
+  padding: 0em;
+  width: 100%;
+  transform: translateY(-50%);
 }
 
 /*******************************************************************************
@@ -2215,25 +2251,6 @@ header.logo .motto .motto-1 span:last-child {
 }
 .button-primary:hover {
   color: white;
-}
-
-.image-tiles .tile {
-  margin: 0.4em;
-  display: inline-block;
-  padding: 0em;
-  background-color: #81c784;
-  border: 0.4em solid #2e7d32;
-}
-.image-tiles .tile-2 {
-  width: 46% !important;
-}
-.image-tiles img {
-  position: absolute;
-  top: 50%;
-  margin: 0em;
-  padding: 0em;
-  width: 100%;
-  transform: translateY(-50%);
 }
 
 /*# sourceMappingURL=monito-rapa-dark.css.map */
